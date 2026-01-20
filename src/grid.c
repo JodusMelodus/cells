@@ -1,3 +1,4 @@
+#include <omp.h>
 #include "grid.h"
 
 Grid *GridCreate(uint16_t width, uint16_t height)
@@ -52,9 +53,7 @@ int GridUpdate(Grid *grid)
                     uint16_t b = x + dx;
 
                     if (ColorIsEqual(grid->buffer[a * w + b], WHITE))
-                    {
                         sum++;
-                    }
                 }
             }
 
